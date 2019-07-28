@@ -1,8 +1,5 @@
 # FROM xqdocker/ubuntu-nginx
 FROM ubuntu:14.04
-MAINTAINER Xiaoqi Cao <thomascxq@gmail.com>
-
-#Install Nginx
 
 RUN apt-get update \
     && apt-get install -y software-properties-common \
