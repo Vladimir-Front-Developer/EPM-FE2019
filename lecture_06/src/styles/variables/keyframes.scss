@@ -1,0 +1,43 @@
+@keyframes heart {
+    0% {
+        transform: scale(1, 1);
+    }
+    50% {
+        transform: scale(1.1, 1.1);
+    }
+    100% {
+        transform: scale(1, 1);
+    }
+}
+@keyframes rotationWithIncrease {
+    from {
+        transform: perspective(500px) scale(1, 1) rotateY(0deg);
+    }
+    to {
+        transform: perspective(500px) scale(1.5, 1.5) rotateY(360deg);
+    }
+}
+@keyframes increaseLeftAlignment {
+    from {
+        transform: scale(1, 1);
+    }
+    to {
+        transform: scale(1.2, 1.2) translateX(-80%);
+    }
+}
+@keyframes increaseCenterAlignment {
+    from {
+        transform: scale(1, 1);
+    }
+    to {
+        transform: scale(1.2, 1.2);
+    }
+}
+@keyframes increaseRightAlignment {
+    from {
+        transform: scale(1, 1);
+    }
+    to {
+        transform: scale(1.2, 1.2) translateX(80%);
+    }
+}

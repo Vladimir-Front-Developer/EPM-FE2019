@@ -1,0 +1,9 @@
+.link {
+    color: #ffffff;
+    text-decoration: none;
+    font-family: $priamryFont;
+    text-transform: uppercase;
+    transition: $transitionTimeHover;
+    &:hover { color: #ffe26d; }
+    &:active { color: #ffe26d; }
+}

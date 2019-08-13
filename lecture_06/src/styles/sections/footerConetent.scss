@@ -1,0 +1,58 @@
+.footerConetent {
+    margin-top: 80px;
+    height: 302px;
+    .footerConetent__link {
+        text-decoration: none;
+        transition: $transitionTimeHover;
+        color: #000;
+        &:hover { color: #62497c; }
+        &:active { color: #62497c; }
+    }
+    .footerConetent__header {
+        text-transform: uppercase;
+        font-family: $priamryFont;
+        font-size: 11px;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 25px;
+    }
+    .icon {
+        font-family: "fontello";
+        font-style: normal;
+        font-weight: normal;
+    }
+    .footerConetent__office {
+        .footerConetent__office__address {
+            font-family: Helvetica;
+            font-size: 14px;
+            line-height: 1.74;
+            font-style: normal;
+            text-align: center;
+        }
+    }
+    .footerConetent__fallow {
+        .footerConetent__fallow__list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            list-style-type: none;
+            max-width: 200px;
+            .footerConetent__fallow__list__item { 
+                margin: 15px 20px;
+                transition: $transitionTimeHover;
+                &:hover { transform: rotate(360deg); }
+            }
+        }
+    }
+    .footerConetent__contactInfo {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        .link_contactInfo {
+            color: #000;
+            font-family: Helvetica;
+            font-size: 14px;
+            line-height: 1.74;
+        }
+    }
+}

@@ -1,0 +1,44 @@
+.lifeInZippy {
+    width: 100%;
+    background-color: #efefef;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .photoSlider {
+        margin-top: 40px;
+        margin-bottom: 110px;
+        .photoSlider__photo {
+            width: 695px;
+            height: 430px;
+            object-fit: contain;
+            margin-bottom: 10px;
+        }
+        .photoSlider__list {
+            display: flex;
+            justify-content: space-between;
+            .photoSlider__list__left {
+                @include flex-VH-center();
+                width: 30px;
+                height: 70px;
+                margin-top: 5px;
+                margin-right: 5px;
+                background-color: #2a2a2a;
+                &:hover { background-color: #62497c; }
+            }
+            .photoSlider__list__item {
+                margin: 5px;
+                width: 110px;
+                height: 70px;
+            }
+            .photoSlider__list__right {
+                @include flex-VH-center();
+                width: 30px;
+                height: 70px;
+                margin-top: 5px;
+                margin-left: 5px;
+                background-color: #ffe26d;
+                &:hover { background-color: #62497c; }
+            }
+        }
+    }
+}

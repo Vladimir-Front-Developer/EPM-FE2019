@@ -1,0 +1,64 @@
+@import "./styles/variables/variables.scss";
+
+@import "./styles/components/container.scss";
+@import "./styles/components/logo.scss";
+@import "./styles/components/menu.scss";
+@import "./styles/components/link.scss";
+@import "./styles/components/text.scss";
+@import "./styles/components/button.scss";
+@import "./styles/components/slider.scss";
+
+@import "./styles/sections/welcome.scss";
+@import "./styles/sections/projects.scss";
+@import "./styles/sections/pricingTable.scss";
+@import "./styles/sections/videoProjects.scss";
+@import "./styles/sections/zippyTeam.scss";
+@import "./styles/sections/lifeInZippy.scss";
+@import "./styles/sections/newSletter.scss";
+@import "./styles/sections/blog.scss";
+@import "./styles/sections/contact.scss";
+@import "./styles/sections/footerConetent.scss";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+header {
+    width: 100%;
+    position: absolute;
+    max-width: $maxWidth;
+    @include flex-VH-center;
+    .container {
+        margin-top: 40px;
+        align-items: center;
+        align-items: flex-end;
+        justify-content: space-between;
+    }
+}
+main {
+    width: 100%;
+    max-width: $maxWidth;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    .container {
+        align-items: center;
+        flex-direction: column;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+

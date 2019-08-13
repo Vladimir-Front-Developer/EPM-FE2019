@@ -1,0 +1,50 @@
+
+.contact {
+    width: 100%;
+    display: flex;
+    .contact__block {
+        flex-grow: 1;
+        padding: 50px 40px;
+        background-color: #ffe26d;    
+        .contact__header {
+            font-size: 45px;
+            font-weight: bold;
+            font-family: $priamryFont;
+        }
+        .contact__form {
+            max-width: 310px;
+            display: flex;
+            flex-direction: column;
+            .contact__label {
+                font-family: $priamryFont;
+                font-size: 11px;
+                font-weight: bold;
+                margin-top: 20px;
+                margin-bottom: 10px;
+                text-transform: uppercase;
+                cursor: pointer;
+            }
+            .contact__input {
+                width: 310px;
+                height: 45px;
+                padding: 15px;
+                border: none;
+                background-color: #fefefe;
+            }
+            .contact__textarea {
+                width: 310px;
+                height: 145px - 30;
+                padding: 15px;
+                border: none;
+                background-color: #fefefe;
+            }
+            .contact__button {
+                width: 100%;
+                margin-top: 15px;
+                border-radius: 0;
+                background-color: #fefefe;
+                &:hover { background-color: #62497c; }
+            }
+        }
+    }
+}
