@@ -11,8 +11,8 @@
             align-items: center;
 
             background-color: #fff;
-            &:nth-child(1):focus { animation: increaseRightAlignment 1s ease-out forwards; }   
-            &:nth-child(2):focus { animation: increaseCenterAlignment 1s ease-out forwards; }   
+            &:nth-child(1):focus { animation: increaseRightAlignment 1s ease-out forwards; }
+            &:nth-child(2):focus { animation: increaseCenterAlignment 1s ease-out forwards; }
             &:nth-child(3):focus { animation: increaseLeftAlignment 1s ease-out forwards; }
             .blog__content__item__image {
                 width: 205px;

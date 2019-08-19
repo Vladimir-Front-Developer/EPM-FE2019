@@ -5,9 +5,13 @@
         list-style-type: none;
         justify-content: space-between;
         .menu__list__item {
-            font-size: 11px;
-            transition: 0.5s;
-            a:hover { font-size: 14px; }
+            .menu__list__item__link {
+                font-size: 11px;
+                transition: $transitionTimeHover;
+                &:hover { 
+                    transform: scale(1.5, 1.5);
+                }
+            }
         }
     }
 }
