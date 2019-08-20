@@ -3,117 +3,112 @@
     <meta charset="UTF-8">
     <title>Zippy</title>
 </head>
-<body>
-    <header class="container content">
-        <nav class="menu navbar navbar-expand-md justify-content-between">
+<body class="h-center-col">
+    <header class="container content absolute">
+        <nav class=" menu navbar navbar-expand-md justify-content-between">
             <div class="logo">
                 <a class="navbar-brand menu__brand" href=""><h1 class="logo__name">zippy</h1></a>
             </div>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav">
-                    <li class="nav-item menu__item">
+                    <li class="nav-item mr-3 menu__item">
                         <a class="nav-link menu__item__link" href="#home">home</a>
                     </li>
-                    <li class="nav-item menu__item">
+                    <li class="nav-item mr-3 menu__item">
                         <a class="nav-link menu__item__link" href="#projects">projects</a>
                     </li>
-                    <li class="nav-item menu__item">
+                    <li class="nav-item mr-3 menu__item">
                         <a class="nav-link menu__item__link" href="#team">team</a>
                     </li>
-                    <li class="nav-item menu__item">
+                    <li class="nav-item mr-3 menu__item">
                         <a class="nav-link menu__item__link" href="#blog">blog</a>
                     </li>
-                    <li class="nav-item menu__item">
+                    <li class="nav-item mr-3 menu__item">
                         <a class="nav-link menu__item__link" href="#contact">contact</a>
                     </li>
                 </ul>
             </div>
         </nav>
     </header>
-    <!-- <main>
-        <section id="home" class="slider">
-            <div class="container">
-                <div class="slider__item">
-                    <h3 class="slider__item__header">One page promising to fill all your needs!</h3>
-                    <p class="text">This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet.</p>
-                    <button class="button">learn more</button>
-                </div>
+    <main class="container p-0">
+        <section id="home" class="slider center">
+            <div class="slider__item content">
+                <h3 class="slider__item__header">One page promising to fill all your needs!</h3>
+                <p class="slider__item__text">This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet.</p>
+                <button class="btn btn-style slider__item__btn">learn more</button>
             </div>
         </section>
-        <section id="welcome" class="welcome">
-            <div class="container">
-                <h2 class="container__header">Welcome to Zippy</h2>
+        <section id="welcome" class="welcome center">
+            <div class="content h-center-col">
+                <h2 class="header-style welcome__header">Welcome to Zippy</h2>
                 <div class="welcome__content">
-                    <p class="text welcome__content__text">This is Photoshop's version of Lorem ipsum. Proin gravid nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor.</p>
+                    <p class="welcome__content__text">This is Photoshop's version of Lorem ipsum. Proin gravid nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor.</p>
                     <img class="welcome__content__img" src="./assets/images/1x/umbrella-icon.png" alt="umbrella">
                 </div>
-                <div class="container__items">
-                    <div class="welcome__item">
-                        <div class="welcome__item__container">
-                            <img class="welcome__item__container__img" src="./assets/images/1x/bell-icon.png" alt="bell">
+                <div class="v-center-between separator-line flex-wrap">
+                    <div class="welcome__item h-center-col">
+                        <div class="welcome__item__container center">
+                            <img src="./assets/images/1x/bell-icon.png" alt="bell">
                         </div>
                         <h4 class="welcome__item__header">LOREM IPSUM</h4>
                         <p class="welcome__item__text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate harum praesentium dolores dolore recusandae.</p>
-                        <button class="button">learn more</button>
+                        <button class="btn btn-style welcome__item__btn">learn more</button>
                     </div>
-                    <div class="welcome__item">
-                        <div class="welcome__item__container">
-                            <img class="welcome__item__container__img" src="./assets/images/1x/envelop-icon.png" alt="envelop">
+                    <div class="welcome__item h-center-col">
+                        <div class="welcome__item__container center">
+                            <img src="./assets/images/1x/envelop-icon.png" alt="envelop">
                         </div>
                         <h4 class="welcome__item__header">DOLOR SIT</h4>
                         <p class="welcome__item__text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate harum praesentium dolores dolore recusandae.</p>
-                        <button class="button">learn more</button>
+                        <button class="btn btn-style welcome__item__btn">learn more</button>
                     </div>
-                    <div class="welcome__item">
-                        <div class="welcome__item__container">
-                            <img class="welcome__item__container__img" src="./assets/images/1x/drawer-icon.png" alt="drawer">
+                    <div class="welcome__item h-center-col">
+                        <div class="welcome__item__container center">
+                            <img src="./assets/images/1x/drawer-icon.png" alt="drawer">
                         </div>
                         <h4 class="welcome__item__header">CONSECTETURE</h4>
                         <p class="welcome__item__text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate harum praesentium dolores dolore recusandae.</p>
-                        <button class="button">learn more</button>
+                        <button class="btn btn-style welcome__item__btn">learn more</button>
                     </div>
                 </div>
             </div>
         </section>
-        <section id="projects" class="projects">
-            <div class="container">
-                <h2 class="container__header">Projects</h2>
-                <div class="container__items">
+        <section id="projects" class="projects h-center-col">
+                <h2 class="header-style projects__header">Projects</h2>
+                <div class="d-flex flex-wrap justify-content-between">
                     <div class="projects__item">
-                        <img src="./assets/images/1x/image_6.png" alt="project-img" class="projects__item__img">
+                        <img class="projects__item__img" src="./assets/images/1x/image_6.png" alt="project-img">
                         <div class="projects__item__block">
                             <h4 class="projects__item__header">project name</h4>
                             <p class="projects__item__text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Assumenda, iusto tenetur? Consectetur saepe iure aperiam.</p>
-                            <button class="button projects__item__button">launch case study</button>
+                            <button class="btn btn-style projects__item__button">launch case study</button>
                         </div>
                     </div>
                     <div class="projects__item">
-                        <img src="./assets/images/1x/image_5.png" alt="project-img" class="projects__item__img">
+                        <img class="projects__item__img" src="./assets/images/1x/image_5.png" alt="project-img">
                         <div class="projects__item__block">
                             <h4 class="projects__item__header">project name</h4>
                             <p class="projects__item__text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Assumenda, iusto tenetur? Consectetur saepe iure aperiam.</p>
-                            <button class="button projects__item__button">launch case study</button>
+                            <button class="btn btn-style projects__item__button">launch case study</button>
                         </div>
                     </div>
                     <div class="projects__item">
-                        <img src="./assets/images/1x/image_4.png" alt="project-img" class="projects__item__img">
+                        <img class="projects__item__img" src="./assets/images/1x/image_4.png" alt="project-img">
                         <div class="projects__item__block">
                             <h4 class="projects__item__header">project name</h4>
                             <p class="projects__item__text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Assumenda, iusto tenetur? Consectetur saepe iure aperiam.</p>
-                            <button class="button projects__item__button">launch case study</button>
+                            <button class="btn btn-style projects__item__button">launch case study</button>
                         </div>
                     </div>
                     <div class="projects__item">
-                        <img src="./assets/images/1x/image_7.png" alt="project-img" class="projects__item__img">
+                        <img class="projects__item__img" src="./assets/images/1x/image_7.png" alt="project-img">
                         <div class="projects__item__block">
                             <h4 class="projects__item__header">project name</h4>
                             <p class="projects__item__text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Assumenda, iusto tenetur? Consectetur saepe iure aperiam.</p>
-                            <button class="button projects__item__button">launch case study</button>
+                            <button class="btn btn-style projects__item__button">launch case study</button>
                         </div>
                     </div>
                 </div>
-            </div>
-
         </section>
         <section class="pricingTable">
             <div class="container">
@@ -155,7 +150,7 @@
                 </div>
             </div>
         </section>
-        <section class="videoProjects">
+        <!-- <section class="videoProjects">
             <h2 class="videoProjects__header">Video Projects</h2>
             <div class="videoProjects__list">
                 <div class="video">
@@ -302,8 +297,8 @@
                 </div>
             </form>
         </section>
-    </main>
-    <footer class="container">
+    </main> -->
+    <!-- <footer class="container">
         <div class="footerConetent container__items">
             <div class="footerConetent__office">
                 <h4 class="footerConetent__header">Office Address</h4>

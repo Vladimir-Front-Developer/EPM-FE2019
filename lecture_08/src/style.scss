@@ -1,9 +1,34 @@
 @import '~bootstrap/scss/bootstrap';
 
+@import './styles/variables/variables.scss';
 @import './styles/components/menu.scss';
+@import './styles/components/button.scss';
+@import './styles/components/header.scss';
 
-body {
-    background-color: #afafaf;
-}
+@import './styles/sections/slider.scss';
+@import './styles/sections/welcome.scss';
+@import './styles/sections/projects.scss';
+
+$site-width: 1400px;
+
 .container { max-width: 1400px; }
 .content { max-width: 700px; }
+.absolute { position: absolute; }
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.h-center-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.v-center-between {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.separator-line { border-bottom: 2px solid #e8e8e8; }
+

@@ -1,0 +1,52 @@
+.welcome {
+    .welcome__header {
+        margin-top: 85px;
+        margin-bottom: 75px;
+    }
+    .welcome__content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 65px;
+        .welcome__content__text {
+            font-size: 30px;
+            line-height: normal;
+            font-family: $secondary-font;
+            margin-right: 70px;
+        }
+        .welcome__content__img {
+            width: 190px;
+            height: 195px;
+        }
+    }
+    .welcome__item {
+        .welcome__item__container {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background-color: $accent-color;
+            margin-bottom: 30px;
+        }
+        .welcome__item__header {
+            font-size: 14px;
+            font-weight: bold;
+            font-family: $primary-font;
+            color: $accent-color;
+            margin-bottom: 25px;
+        }
+        .welcome__item__text {
+            max-width: 155px;
+            font-size: 13px;
+            font-family: Helvetica;
+            color: $secondary-color;
+            line-height: 1.75;
+            text-align: center;
+            margin-bottom: 35px;
+        }
+        .welcome__item__btn {
+            width: 125px;
+            height: 45px;
+            margin-bottom: 55px;
+        }
+    }
+}

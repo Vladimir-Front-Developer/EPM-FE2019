@@ -1,0 +1,39 @@
+.projects {
+    .projects__header {
+        margin-top: 55px;
+        margin-bottom: 45px;
+    }
+    .projects__item {
+        cursor: pointer;
+        width: 25%;
+        min-width: 350px;
+        margin-bottom: 40px;
+        .projects__item__img {
+            width: 350px;
+            height: 485px;
+        }
+        .projects__item__block { padding: 45px; }
+        &:nth-child(odd){ .projects__item__block { background-color: #efefef; } }
+        &:nth-child(even){ .projects__item__block { background-color: #e4e4e4; } }
+        .projects__item__header {
+            font-size: 14px;
+            font-family: $primary-font;
+            text-transform: uppercase;
+            margin-bottom: 17px;
+        }
+        .projects__item__text {
+            font-family: Helvetica;
+            font-size: 13px;
+            line-height: 1.74;
+            color: $secondary-color;
+            margin-bottom: 15px;
+        }
+        .projects__item__button {
+            width: 160px;
+            height: 45px;
+            background-color: $basic-color;
+            &:hover { background-color: $accent-color; }
+        }
+        &:hover { .projects__item__block { background-color: $primary-color; } }
+    }
+}
