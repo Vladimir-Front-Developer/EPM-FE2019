@@ -1,5 +1,17 @@
 @import '~bootstrap/scss/bootstrap';
 
+@font-face {
+    font-family: Montserrat;
+    src: url(./assets/fonts/montserrat.woff);
+}
+@font-face {
+    font-family: Roboto;
+    src: url(./assets/fonts/Roboto.woff);
+}
+$primary-font: Montserrat;
+$secondary-font: Roboto;
+$site-width: 1400px;
+
 @import './styles/variables/variables.scss';
 @import './styles/components/menu.scss';
 @import './styles/components/button.scss';
@@ -9,9 +21,7 @@
 @import './styles/sections/welcome.scss';
 @import './styles/sections/projects.scss';
 
-$site-width: 1400px;
-
-.container { max-width: 1400px; }
+.container { max-width: $site-width; }
 .content { max-width: 700px; }
 .absolute { position: absolute; }
 .center {
