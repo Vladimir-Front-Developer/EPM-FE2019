@@ -1,0 +1,36 @@
+.newSletter {
+    height: 329px;
+    object-fit: contain;
+    background-image: url(./assets/images/1x/image_2.png);
+    .newSletter__header {
+        margin-top: 55px;
+        margin-bottom: 30px;
+        font-family: $primary-font;
+        color: #fff;
+    }
+    .newSletter__form {
+        width: 100%;
+        max-width: 545px;
+        .newSletter__input {
+            width: 75%;
+            height: 55px;
+            outline: none;
+            padding: 15px;
+            border-radius: 3px;
+            background-color: #fefefe;
+            &::placeholder {
+                text-align: left;
+                font-size: 19px;
+                font-family: $primary-font;
+                color: #d8d8d8;
+            }
+        }
+        .newSletter__btn {
+            width: 25%;
+            height: 55px;
+            margin-left: -5px;
+            border-radius: 0px 3px 3px 0px;
+            outline: none;
+        }
+    }
+}

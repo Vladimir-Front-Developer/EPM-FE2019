@@ -16,9 +16,6 @@
         &:nth-child(odd){ .projects__item__block { background-color: #efefef; } }
         &:nth-child(even){ .projects__item__block { background-color: #e4e4e4; } }
         .projects__item__header {
-            font-size: 14px;
-            font-family: $primary-font;
-            text-transform: uppercase;
             margin-bottom: 17px;
         }
         .projects__item__text {

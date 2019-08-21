@@ -1,0 +1,34 @@
+.pricingTable {
+    .pricingTable__header {
+        margin-top: 45px;
+        margin-bottom: 45px;
+    }
+    .pricingTable__item {
+        min-width: 230px;
+        margin-bottom: 40px;
+        .pricingTable__item__header { margin-bottom: 20px; }
+        .pricingTable__item__price {
+            text-align: center;
+            font-family: $primary-font;
+            font-size: 15px;
+            color: $secondary-color;
+            margin-bottom: 20px;
+        }
+        .pricingTable__item__button {
+            width: 80px;
+            height: 30px;
+        }
+    }
+    .specificationsList {
+        list-style: none;
+        padding: 0;
+        margin-bottom: 25px;
+        .specificationsList__item {
+            text-align: center;
+            font-family: Helvetica;
+            font-size: 11px;
+            line-height: 2.1;
+            font-weight: bold;
+        }
+    }
+}

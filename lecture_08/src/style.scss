@@ -16,10 +16,19 @@ $site-width: 1400px;
 @import './styles/components/menu.scss';
 @import './styles/components/button.scss';
 @import './styles/components/header.scss';
+@import './styles/components/sub-header.scss';
+@import './styles/components/video.scss';
+@import './styles/components/team-list.scss';
+@import './styles/components/photo-slider.scss';
 
 @import './styles/sections/slider.scss';
 @import './styles/sections/welcome.scss';
 @import './styles/sections/projects.scss';
+@import './styles/sections/pricingTable.scss';
+@import './styles/sections/videoProjects.scss';
+@import './styles/sections/zippyTeam.scss';
+@import './styles/sections/lifeInZippy.scss';
+@import './styles/sections/newSletter.scss';
 
 .container { max-width: $site-width; }
 .content { max-width: 700px; }
@@ -40,5 +49,5 @@ $site-width: 1400px;
     align-items: center;
     justify-content: space-between;
 }
-.separator-line { border-bottom: 2px solid #e8e8e8; }
-
+.separator-line-right { border-right: 2px solid #e8e8e8; }
+.separator-line-bottom { border-bottom: 2px solid #e8e8e8; }
