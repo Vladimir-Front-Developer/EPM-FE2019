@@ -1,4 +1,5 @@
 .projects {
+    padding: 10px;
     .projects__header {
         margin-top: 55px;
         margin-bottom: 45px;
@@ -6,10 +7,10 @@
     .projects__item {
         cursor: pointer;
         width: 25%;
-        min-width: 350px;
+        min-width: 345px;
         margin-bottom: 40px;
         .projects__item__img {
-            width: 350px;
+            width: 345px;
             height: 485px;
         }
         .projects__item__block { padding: 45px; }
@@ -31,6 +32,10 @@
             background-color: $basic-color;
             &:hover { background-color: $accent-color; }
         }
-        &:hover { .projects__item__block { background-color: $primary-color; } }
+        &:hover {
+            .projects__item__block { 
+                transition: 0.5s;
+                background-color: $primary-color; }
+        }
     }
 }

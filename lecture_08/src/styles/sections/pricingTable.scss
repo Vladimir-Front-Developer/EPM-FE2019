@@ -3,9 +3,11 @@
         margin-top: 45px;
         margin-bottom: 45px;
     }
+    .pricingTable__direction { flex-wrap: wrap; }
     .pricingTable__item {
         min-width: 230px;
         margin-bottom: 40px;
+        &:hover { animation: rotationWithIncrease 2s ease-out forwards; }
         .pricingTable__item__header { margin-bottom: 20px; }
         .pricingTable__item__price {
             text-align: center;
@@ -31,4 +33,8 @@
             font-weight: bold;
         }
     }
+}
+@media screen and (max-width: 710px) {
+    .pricingTable__direction { flex-direction: column; }
+    .separator-line-right { border-right: none !important; }
 }

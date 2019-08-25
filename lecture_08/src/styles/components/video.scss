@@ -13,6 +13,7 @@
         position: absolute;
         width: 120px;
         height: 120px;
+        &:hover { animation: heart 1s ease-in-out infinite; }
     }
     .video__info {
         width: 100%;
@@ -32,5 +33,16 @@
             text-transform: uppercase;
             color: $basic-color;
         }
+    }
+}
+@media screen and (max-width: 710px) {
+    .video__prev {
+        width: 345px !important;
+        height: 230px !important;
+    }
+    .video__play {
+        top: 90px;
+        width: 60px !important;
+        height: 60px !important;
     }
 }

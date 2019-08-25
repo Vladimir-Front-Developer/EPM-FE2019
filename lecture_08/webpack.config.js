@@ -2,6 +2,7 @@ const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+// const FontelloPlugin = require("fontello-webpack-plugin")
 
 module.exports = {
     mode: 'development',
@@ -25,7 +26,7 @@ module.exports = {
                 ]
             },
             {
-                test: /\.(png|svg|jpg|gif)$/,
+                test: /\.(svg|png|jpg|gif)$/,
                 use: [
                     {
                         loader: 'file-loader',
@@ -59,6 +60,7 @@ module.exports = {
     plugins: [
         new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({ template: './src/index.html' }),
-        new MiniCssExtractPlugin({ filename: 'style.css' })
+        new MiniCssExtractPlugin({ filename: 'style.css' }),
+        // new FontelloPlugin({ config: require("./src/assets/fonts/fontello-019ff89e/config.json") })
     ],
 }

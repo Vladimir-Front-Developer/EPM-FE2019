@@ -1,0 +1,16 @@
+.address {
+    .address__header {
+        font-size: 11px;
+        font-weight: bold;
+        font-family: $primary-font;
+        text-transform: uppercase;
+        margin-bottom: 25px;
+    }
+    .address__text {
+        font-family: Helvetica;
+        font-size: 14px;
+        line-height: 1.74;
+        font-style: normal;
+        text-align: center;
+    }
+}

@@ -8,27 +8,24 @@
     font-family: Roboto;
     src: url(./assets/fonts/Roboto.woff);
 }
+@font-face {
+    font-family: 'fontello';
+    src: url('./assets/fonts/fontello-019ff89e/font/fontello.eot?80626837');
+    src: url('./assets/fonts/fontello-019ff89e/font/fontello.woff?80626837') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 $primary-font: Montserrat;
 $secondary-font: Roboto;
-$site-width: 1400px;
 
 @import './styles/variables/variables.scss';
-@import './styles/components/menu.scss';
-@import './styles/components/button.scss';
-@import './styles/components/header.scss';
-@import './styles/components/sub-header.scss';
-@import './styles/components/video.scss';
-@import './styles/components/team-list.scss';
-@import './styles/components/photo-slider.scss';
 
-@import './styles/sections/slider.scss';
-@import './styles/sections/welcome.scss';
-@import './styles/sections/projects.scss';
-@import './styles/sections/pricingTable.scss';
-@import './styles/sections/videoProjects.scss';
-@import './styles/sections/zippyTeam.scss';
-@import './styles/sections/lifeInZippy.scss';
-@import './styles/sections/newSletter.scss';
+@import './styles/components/index.scss';
+
+@import './styles/sections/index.scss';
+
+@import './assets/fonts/fontello-019ff89e/css/fontello.css';
 
 .container { max-width: $site-width; }
 .content { max-width: 700px; }

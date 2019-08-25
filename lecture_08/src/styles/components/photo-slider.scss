@@ -16,7 +16,10 @@
             margin-top: 5px;
             margin-right: 5px;
             background-color: #2a2a2a;
-            &:hover { background-color: $accent-color; }
+            &:hover {
+                transition: 0.5s;
+                background-color: $accent-color;
+            }
         }
         .photoSlider__list__item {
             margin: 5px;
@@ -29,7 +32,28 @@
             margin-top: 5px;
             margin-left: 5px;
             background-color: $primary-color;
-            &:hover { background-color: $accent-color; }
+            &:hover {
+                transition: 0.5s;
+                background-color: $accent-color;
+            }
         }
+    }
+}
+@media screen and (max-width: 710px) {
+    .photoSlider__photo {
+        width: 100% !important;
+        height: 215px !important;
+    }
+    .photoSlider__list__item {
+        &:nth-child(odd){ display: none; }
+    }
+}
+@media screen and (max-width: 470px) {
+    .photoSlider__photo {
+        width: 100% !important;
+        height: 180px !important;
+    }
+    .photoSlider__list__item {
+        &:nth-child(2){ display: none; }
     }
 }
