@@ -53,3 +53,13 @@
         }
     }
 }
+@media screen and (max-width: 505px) {
+    .welcome__content__img {
+        display: none;
+    }
+    .welcome__item__mobile {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}

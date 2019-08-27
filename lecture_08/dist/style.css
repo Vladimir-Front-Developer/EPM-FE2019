@@ -7163,6 +7163,7 @@ a.text-dark:hover, a.text-dark:focus {
     background-color: #62497c; }
 
 .header-style {
+  text-align: center;
   font-size: 45px;
   font-weight: bold;
   font-family: Montserrat; }
@@ -7208,7 +7209,7 @@ a.text-dark:hover, a.text-dark:focus {
 
 @media screen and (max-width: 710px) {
   .video__prev {
-    width: 345px !important;
+    width: 320px !important;
     height: 230px !important; }
   .video__play {
     top: 90px;
@@ -7431,6 +7432,14 @@ a.text-dark:hover, a.text-dark:focus {
     height: 45px;
     margin-bottom: 55px; }
 
+@media screen and (max-width: 505px) {
+  .welcome__content__img {
+    display: none; }
+  .welcome__item__mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: center; } }
+
 .projects {
   padding: 10px; }
   .projects .projects__header {
@@ -7438,13 +7447,14 @@ a.text-dark:hover, a.text-dark:focus {
     margin-bottom: 45px; }
   .projects .projects__item {
     cursor: pointer;
-    width: 25%;
-    min-width: 345px;
+    flex-grow: 1;
+    max-width: 345px;
     margin-bottom: 40px; }
     .projects .projects__item .projects__item__img {
-      width: 345px;
+      max-width: 345px;
       height: 485px; }
     .projects .projects__item .projects__item__block {
+      max-width: 345px;
       padding: 45px; }
     .projects .projects__item:nth-child(odd) .projects__item__block {
       background-color: #efefef; }
@@ -7467,6 +7477,18 @@ a.text-dark:hover, a.text-dark:focus {
     .projects .projects__item:hover .projects__item__block {
       transition: 0.5s;
       background-color: #ffe26d; }
+
+@media screen and (max-width: 730px) {
+  .projects__item__img {
+    max-width: 310px !important; }
+  .projects__pos__adap {
+    display: flex;
+    flex-direction: column;
+    align-items: center; } }
+
+@media screen and (max-width: 995px) {
+  .projects__pos__adap {
+    justify-content: space-around !important; } }
 
 .pricingTable .pricingTable__header {
   margin-top: 45px;
@@ -7522,6 +7544,16 @@ a.text-dark:hover, a.text-dark:focus {
 .zippyTeam .zippyTeam__header {
   margin-top: 75px;
   margin-bottom: 45px; }
+
+@media screen and (max-width: 580px) {
+  .team__pos__adap {
+    justify-content: space-around !important; } }
+
+@media screen and (max-width: 505px) {
+  .team__pos__adap {
+    display: flex;
+    flex-direction: column;
+    align-items: center; } }
 
 .lifeInZippy {
   background-color: #efefef; }
@@ -7624,6 +7656,16 @@ a.text-dark:hover, a.text-dark:focus {
           color: #000;
           background-color: #ffe26d; }
 
+@media screen and (max-width: 660px) {
+  .blog__pos__adap {
+    justify-content: space-around !important; } }
+
+@media screen and (max-width: 505px) {
+  .blog__pos__adap {
+    display: flex;
+    flex-direction: column;
+    align-items: center; } }
+
 .feedback .feedback__block {
   background-color: #ffe26d;
   flex-grow: 1;
@@ -7643,13 +7685,13 @@ a.text-dark:hover, a.text-dark:focus {
     margin-bottom: 10px;
     cursor: pointer; }
   .feedback .feedback__form .feedback__input {
-    width: 310px;
+    width: 100%;
     height: 45px;
     padding: 15px;
     border: none;
     background-color: #fefefe; }
   .feedback .feedback__form .feedback__textarea {
-    width: 310px;
+    width: 100%;
     height: 145px;
     padding: 15px;
     border: none;
