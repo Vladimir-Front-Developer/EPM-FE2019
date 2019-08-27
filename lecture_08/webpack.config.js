@@ -59,7 +59,10 @@ module.exports = {
     },
     plugins: [
         new CleanWebpackPlugin(),
-        new HtmlWebpackPlugin({ template: './src/index.html' }),
+        new HtmlWebpackPlugin({
+            template: './src/index.html',
+            meta: { 'viewport': 'width=device-width, initial-scale=1, shrink-to-fit=no' },
+        }),
         new MiniCssExtractPlugin({ filename: 'style.css' }),
         // new FontelloPlugin({ config: require("./src/assets/fonts/fontello-019ff89e/config.json") })
     ],

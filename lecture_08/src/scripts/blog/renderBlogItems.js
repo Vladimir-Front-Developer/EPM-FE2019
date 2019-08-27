@@ -3,7 +3,7 @@ export default function (items, component){
         let blogItem = document.createElement('div')
         blogItem.id = String(item.id)
         blogItem.className = 'blog__content__item'
-        blogItem.tabindex = '0'
+        // blogItem.tabIndex = '0'
         blogItem.append(getBlogImg(imgSrc))
         blogItem.append(getBlogTitle(item.title))
         const dateMock = '15 Jan, 2015'
@@ -38,9 +38,8 @@ export default function (items, component){
     }
 
     const getBlogRating = (rating) => {
-        console.log(rating)
         const ratingComp = document.createElement('p')
-        ratingComp.className = ''
+        ratingComp.className = 'blog__content__item__rating'
         ratingComp.innerHTML = `rating: ${rating}`
         return ratingComp
     }
@@ -54,7 +53,7 @@ export default function (items, component){
 
     const getBlogTopics = (topics) => {
         const topicsComp = document.createElement('p')
-        topicsComp.className = ''
+        topicsComp.className = 'blog__content__item__topics'
         topicsComp.innerHTML = topics.join(', ')
         return topicsComp
     }
