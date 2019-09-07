@@ -13,6 +13,8 @@ Object.assign(RandomPosts.prototype, {
                 topics: this.getTopics(topicsParams)
             }
         })
+        
+        console.log(JSON.stringify(dataPosts))
         return this.searchByRating(dataPosts)
     },
     getRandomRatings: function (ratingParams) {

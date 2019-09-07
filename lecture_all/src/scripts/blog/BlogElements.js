@@ -1,14 +1,17 @@
-import RandomPosts from "./RandomPosts"
+import Posts from './services/Posts'
 
 function BlogElements(params) {
-    // RandomPosts.call(this, this.getPosts)
+    // Posts.call(this, this.getPosts)
     this.params = params
     this.render = function() {
-        let dataPosts = this.getPosts(this.params)
-        let container = document.getElementById(this.params.nameContainer)
-        for(let i = 0; i < this.params.renderCount; i++){
-            container.append(this.getItem(dataPosts[i], i))
-        }
+        all().then(resDataPosts => {
+            let dataPosts = resDataPosts.json()
+            let container = document.getElementById(this.params.nameContainer)
+            for(let i = 0; i < this.params.renderCount; i++){
+                container.append(this.getItem(dataPosts[i], i))
+            }
+        })
+        .catch(err => `ERR get posts all: ${ err }`)
     }
     this.getItem = function(item, idxImg) {
         const DATE_MOCK = '15 Jan, 2015'
@@ -139,7 +142,7 @@ function BlogElements(params) {
 //     },
 // })
 
-BlogElements.prototype = Object.create(RandomPosts.prototype)
-BlogElements.prototype.constructor = RandomPosts
+BlogElements.prototype = Object.create(Posts.prototype)
+BlogElements.prototype.constructor = Posts
 
 export default BlogElements

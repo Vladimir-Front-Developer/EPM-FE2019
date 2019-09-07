@@ -19,5 +19,4 @@ window.onload = function (){
     let blogElements2 = new BlogElements(PARAMS_RANDOM_POST)
     blogElements1.render(PARAMS_RANDOM_POST)
     blogElements2.render(PARAMS_RANDOM_POST)
-
 }
