@@ -1,12 +1,11 @@
-function RandomPosts(postsParams){
-    this.params = postsParams
-}
+function RandomPosts(postsParams){ this.params = postsParams }
+
 Object.assign(RandomPosts.prototype, {
     getPosts: function (postsParams) {
-        if(postsParams) this.params = postsParams
-        if(!this.params) throw new Error('no argument passed! {countPosts, ratingParams, topicsParams}')
-        const { countPosts, ratingParams, topicsParams } = this.params
-        const dataPosts = new Array(countPosts).fill('item', 0, countPosts).map((el, idx) => {
+        this.params = postsParams
+        if(!this.params || !postsParams) throw new Error('no argument passed! {countPosts, ratingParams, topicsParams}')
+        let { countPosts, ratingParams, topicsParams } = this.params
+        let dataPosts = new Array(countPosts).fill('item', 0, countPosts).map((el, idx) => {
             return {
                 id: idx++,
                 title: `Title ${idx++}`,
@@ -19,7 +18,7 @@ Object.assign(RandomPosts.prototype, {
     getRandomRatings: function (ratingParams) {
         this.params.ratingParams = ratingParams
         if(!this.params.ratingParams) throw new Error('no argument passed! {countRatings, min, max}')
-        const { countRatings, min, max } = ratingParams
+        let { countRatings, min, max } = ratingParams
         return new Array(countRatings).fill('item', 0, countRatings).map(() => {
             return this.getRandomInt(min, max)
         })
@@ -53,4 +52,5 @@ Object.assign(RandomPosts.prototype, {
         return Math.floor(arr.reduce((a, b) => a + b) / arr.length)
     },
 })
+
 export default RandomPosts
