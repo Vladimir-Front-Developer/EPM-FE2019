@@ -4,13 +4,13 @@ class RenderPosts extends PostsService {
     constructor(nameContainer, countPosts){
         super()
         this.getPosts().then(posts => {
-            this.posts = posts
+            this.posts = this.searchByRating(posts)
             this.render(nameContainer, countPosts)
         })
     }
 
     render(nameContainer, countPosts){
-        if(this.posts.length) throw new Error('no posts')
+        if(!this.posts.length) throw new Error('no posts')
         if(!nameContainer) throw new Error('nameContainer undefined')
         if(!countPosts) throw new Error('countPosts undefined')
         let container = document.getElementById(nameContainer)
@@ -59,6 +59,29 @@ class RenderPosts extends PostsService {
         btn.className = cls
         btn.innerHTML = txt
         return btn
+    }
+
+    calculateAverageRating(arr) {
+        return arr.map(el => {
+            return {
+                id: el.id,
+                rating: this.getAverage(el.ratings),
+                topics: el.topics,
+                title: el.title,
+                date: el.date,
+                text: el.text,
+                imgLink: el.imgLink
+            }
+        })
+    }
+
+    getAverage(arr) {
+        return Math.floor(arr.reduce((a, b) => a + b) / arr.length)
+    }
+
+    searchByRating(items) {
+        let averageRating = this.calculateAverageRating(items)
+        return averageRating.sort((a, b) => { return b.rating - a.rating })
     }
 }
 
