@@ -81,20 +81,20 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./src/index.js");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./src/app.js");
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./src/index.js":
-/*!**********************!*\
-  !*** ./src/index.js ***!
-  \**********************/
+/***/ "./src/app.js":
+/*!********************!*\
+  !*** ./src/app.js ***!
+  \********************/
 /*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.scss */ \"./src/style.scss\");\n/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_style_scss__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _scripts_blog_blog__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./scripts/blog/blog */ \"./src/scripts/blog/blog.js\");\n\r\n\r\n\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.scss */ \"./src/style.scss\");\n/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_style_scss__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _scripts_blog_RenderPosts__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./scripts/blog/RenderPosts */ \"./src/scripts/blog/RenderPosts.js\");\n\r\n\r\nwindow.onload = function (){\r\n    new _scripts_blog_RenderPosts__WEBPACK_IMPORTED_MODULE_1__[\"default\"]('blogContent', 3)\r\n}\n\n//# sourceURL=webpack:///./src/app.js?");
 
 /***/ }),
 
@@ -106,19 +106,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _sty
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _services_PostsService__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./services/PostsService */ \"./src/scripts/blog/services/PostsService.js\");\n\r\n\r\nclass RenderPosts extends _services_PostsService__WEBPACK_IMPORTED_MODULE_0__[\"default\"] {\r\n    constructor(nameContainer, countPosts){\r\n        super()\r\n        this.getPosts().then(posts => {\r\n            this.posts = this.searchByRating(posts)\r\n            this.render(nameContainer, countPosts)\r\n        })\r\n    }\r\n\r\n    render(nameContainer, countPosts){\r\n        if(!this.posts.length) throw new Error('no posts')\r\n        if(!nameContainer) throw new Error('nameContainer undefined')\r\n        if(!countPosts) throw new Error('countPosts undefined')\r\n        let container = document.getElementById(nameContainer)\r\n        for(let i = 0; i < countPosts; i++){\r\n            container.append(this.getItem(this.posts[i], i))\r\n        }\r\n    }\r\n\r\n    getItem(data, className){\r\n        let div = document.createElement('div')\r\n        div.id = String(data.id)\r\n        div.className = className\r\n        div.append(this.getImg(data.moks.img, 'blog__content__item__image'))\r\n        div.append(this.getSubHeader(data.title, 'sub-header blog__content__item__header'))\r\n        div.append(this.getText(data.moks.date, 'blog__content__item__date'))\r\n        div.append(this.getText(data.rating, 'blog__content__item__rating'))\r\n        div.append(this.getText(data.moks.text, 'blog__content__item__text'))\r\n        div.append(this.getText(data.topics, 'blog__content__item__topics'))\r\n        div.append(this.getBtn('read more', 'btn btn-style blog__content__item__button'))\r\n    }\r\n\r\n    getImg(src, cls){\r\n        let img = document.createElement('img')\r\n        img.className = cls\r\n        img.src = src\r\n        img.alt = 'image'\r\n        return img\r\n    }\r\n    \r\n    getSubHeader(txt, cls){\r\n        let h4 = document.createElement('h4')\r\n        h4.className = cls\r\n        h4.innerHTML = txt\r\n        return h4\r\n    }\r\n\r\n    getText(txt, cls){\r\n        let p = document.createElement('p')\r\n        p.className = cls\r\n        p.innerHTML = txt\r\n        return p\r\n    }\r\n\r\n    getBtn(txt, cls){\r\n        let btn = document.createElement('button')\r\n        btn.className = cls\r\n        btn.innerHTML = txt\r\n        return btn\r\n    }\r\n\r\n    calculateAverageRating(arr) {\r\n        return arr.map(el => {\r\n            return {\r\n                id: el.id,\r\n                rating: this.getAverage(el.ratings),\r\n                topics: el.topics,\r\n                title: el.title,\r\n                date: el.date,\r\n                text: el.text,\r\n                imgLink: el.imgLink\r\n            }\r\n        })\r\n    }\r\n\r\n    getAverage(arr) {\r\n        return Math.floor(arr.reduce((a, b) => a + b) / arr.length)\r\n    }\r\n\r\n    searchByRating(items) {\r\n        let averageRating = this.calculateAverageRating(items)\r\n        return averageRating.sort((a, b) => { return b.rating - a.rating })\r\n    }\r\n}\r\n\r\n/* harmony default export */ __webpack_exports__[\"default\"] = (RenderPosts);\n\n//# sourceURL=webpack:///./src/scripts/blog/RenderPosts.js?");
-
-/***/ }),
-
-/***/ "./src/scripts/blog/blog.js":
-/*!**********************************!*\
-  !*** ./src/scripts/blog/blog.js ***!
-  \**********************************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _RenderPosts__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./RenderPosts */ \"./src/scripts/blog/RenderPosts.js\");\n\r\nwindow.onload = function (){\r\n    new _RenderPosts__WEBPACK_IMPORTED_MODULE_0__[\"default\"]('blogContent', 3)\r\n}\r\n\n\n//# sourceURL=webpack:///./src/scripts/blog/blog.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _services_PostsService__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./services/PostsService */ \"./src/scripts/blog/services/PostsService.js\");\n\r\n\r\nclass RenderPosts extends _services_PostsService__WEBPACK_IMPORTED_MODULE_0__[\"default\"] {\r\n    constructor(nameContainer, countPosts){\r\n        super()\r\n        this.getSortByRatingPosts().then(posts => this.render(nameContainer, posts, countPosts))\r\n    }\r\n\r\n    render(nameContainer, posts, countPosts){\r\n        if(!nameContainer) throw new Error('nameContainer undefined')\r\n        if(!countPosts) throw new Error('countPosts undefined')\r\n        let container = document.getElementById(nameContainer)\r\n        for(let i = 0; i < countPosts; i++){\r\n            container.append(this.getItem(posts[i]))\r\n        }\r\n    }\r\n\r\n    getItem(data){\r\n        let div = document.createElement('div')\r\n        div.id = String(data.id)\r\n        div.className = 'blog__content__item'\r\n        div.append(this.getImg(data.imgLink, 'blog__content__item__image'))\r\n        div.append(this.getSubHeader(data.title, 'sub-header blog__content__item__header'))\r\n        div.append(this.getText(data.date, 'blog__content__item__date'))\r\n        div.append(this.getText(data.rating, 'blog__content__item__rating'))\r\n        div.append(this.getText(data.text, 'blog__content__item__text'))\r\n        div.append(this.getText(data.topics.join(', '), 'blog__content__item__topics'))\r\n        div.append(this.getBtn('read more', 'btn btn-style blog__content__item__button'))\r\n        return div\r\n    }\r\n\r\n    getImg(src, cls){\r\n        let img = document.createElement('img')\r\n        img.className = cls\r\n        img.src = src\r\n        img.alt = 'image'\r\n        return img\r\n    }\r\n    \r\n    getSubHeader(txt, cls){\r\n        let h4 = document.createElement('h4')\r\n        h4.className = cls\r\n        h4.innerHTML = txt\r\n        return h4\r\n    }\r\n\r\n    getText(txt, cls){\r\n        let p = document.createElement('p')\r\n        p.className = cls\r\n        p.innerHTML = txt\r\n        return p\r\n    }\r\n\r\n    getBtn(txt, cls){\r\n        let btn = document.createElement('button')\r\n        btn.className = cls\r\n        btn.innerHTML = txt\r\n        return btn\r\n    }\r\n}\r\n\r\n/* harmony default export */ __webpack_exports__[\"default\"] = (RenderPosts);\n\n//# sourceURL=webpack:///./src/scripts/blog/RenderPosts.js?");
 
 /***/ }),
 
@@ -130,7 +118,31 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _Ren
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\nclass PostsService {\r\n    async getPosts(url) {\r\n        try {\r\n            let res = await fetch('https://my-json-server.typicode.com/Vladimir-Front-Developer/EPM-FE2019/posts')\r\n            return await res.json()\r\n        } catch(err) {\r\n            console.log(`ERROR getPosts: ${err}`)\r\n            return []\r\n        }\r\n    }\r\n}\r\n\r\n/* harmony default export */ __webpack_exports__[\"default\"] = (PostsService);\n\n//# sourceURL=webpack:///./src/scripts/blog/services/PostsService.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _services_Api__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../services/Api */ \"./src/scripts/services/Api.js\");\n\r\n\r\nclass PostsService extends _services_Api__WEBPACK_IMPORTED_MODULE_0__[\"default\"] {\r\n    async getSortByRatingPosts() {\r\n        let posts = await super.getPosts()\r\n        if(!posts.length) throw new Error('no posts')\r\n        let averageRating = this.calculateAverageRating(posts)\r\n        return averageRating.sort((a, b) => { return b.rating - a.rating })\r\n    }\r\n    calculateAverageRating(arr) {\r\n        return arr.map(el => {\r\n            return {\r\n                id: el.id,\r\n                rating: this.getAverage(el.ratings),\r\n                topics: el.topics,\r\n                title: el.title,\r\n                date: el.date,\r\n                text: el.text,\r\n                imgLink: el.imgLink\r\n            }\r\n        })\r\n    }\r\n    getAverage(arr) {\r\n        return Math.floor(arr.reduce((a, b) => a + b) / arr.length)\r\n    }\r\n}\r\n\r\n/* harmony default export */ __webpack_exports__[\"default\"] = (PostsService);\n\n//# sourceURL=webpack:///./src/scripts/blog/services/PostsService.js?");
+
+/***/ }),
+
+/***/ "./src/scripts/services/Api.js":
+/*!*************************************!*\
+  !*** ./src/scripts/services/Api.js ***!
+  \*************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./config */ \"./src/scripts/services/config.js\");\n\r\nclass Api{\r\n    async getPosts(){\r\n        try {\r\n            let res = await fetch(_config__WEBPACK_IMPORTED_MODULE_0__[\"default\"].url.posts)\r\n            return await res.json()\r\n        } catch(err) {\r\n            console.log(`ERROR getPosts: ${err}`)\r\n            return []\r\n        }\r\n    }\r\n}\r\n/* harmony default export */ __webpack_exports__[\"default\"] = (Api);\n\n//# sourceURL=webpack:///./src/scripts/services/Api.js?");
+
+/***/ }),
+
+/***/ "./src/scripts/services/config.js":
+/*!****************************************!*\
+  !*** ./src/scripts/services/config.js ***!
+  \****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\r\n    url: {\r\n        posts: \"https://my-json-server.typicode.com/Vladimir-Front-Developer/EPM-FE2019/posts\"\r\n    }\r\n});\n\n//# sourceURL=webpack:///./src/scripts/services/config.js?");
 
 /***/ }),
 

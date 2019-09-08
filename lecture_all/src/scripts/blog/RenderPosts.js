@@ -3,33 +3,30 @@ import PostsService from './services/PostsService'
 class RenderPosts extends PostsService {
     constructor(nameContainer, countPosts){
         super()
-        this.getPosts().then(posts => {
-            this.posts = this.searchByRating(posts)
-            this.render(nameContainer, countPosts)
-        })
+        this.getSortByRatingPosts().then(posts => this.render(nameContainer, posts, countPosts))
     }
 
-    render(nameContainer, countPosts){
-        if(!this.posts.length) throw new Error('no posts')
+    render(nameContainer, posts, countPosts){
         if(!nameContainer) throw new Error('nameContainer undefined')
         if(!countPosts) throw new Error('countPosts undefined')
         let container = document.getElementById(nameContainer)
         for(let i = 0; i < countPosts; i++){
-            container.append(this.getItem(this.posts[i], i))
+            container.append(this.getItem(posts[i]))
         }
     }
 
-    getItem(data, className){
+    getItem(data){
         let div = document.createElement('div')
         div.id = String(data.id)
-        div.className = className
-        div.append(this.getImg(data.moks.img, 'blog__content__item__image'))
+        div.className = 'blog__content__item'
+        div.append(this.getImg(data.imgLink, 'blog__content__item__image'))
         div.append(this.getSubHeader(data.title, 'sub-header blog__content__item__header'))
-        div.append(this.getText(data.moks.date, 'blog__content__item__date'))
+        div.append(this.getText(data.date, 'blog__content__item__date'))
         div.append(this.getText(data.rating, 'blog__content__item__rating'))
-        div.append(this.getText(data.moks.text, 'blog__content__item__text'))
-        div.append(this.getText(data.topics, 'blog__content__item__topics'))
+        div.append(this.getText(data.text, 'blog__content__item__text'))
+        div.append(this.getText(data.topics.join(', '), 'blog__content__item__topics'))
         div.append(this.getBtn('read more', 'btn btn-style blog__content__item__button'))
+        return div
     }
 
     getImg(src, cls){
@@ -59,29 +56,6 @@ class RenderPosts extends PostsService {
         btn.className = cls
         btn.innerHTML = txt
         return btn
-    }
-
-    calculateAverageRating(arr) {
-        return arr.map(el => {
-            return {
-                id: el.id,
-                rating: this.getAverage(el.ratings),
-                topics: el.topics,
-                title: el.title,
-                date: el.date,
-                text: el.text,
-                imgLink: el.imgLink
-            }
-        })
-    }
-
-    getAverage(arr) {
-        return Math.floor(arr.reduce((a, b) => a + b) / arr.length)
-    }
-
-    searchByRating(items) {
-        let averageRating = this.calculateAverageRating(items)
-        return averageRating.sort((a, b) => { return b.rating - a.rating })
     }
 }
 
