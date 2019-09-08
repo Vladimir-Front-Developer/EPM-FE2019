@@ -23,11 +23,11 @@ class RenderPosts extends PostsService {
         let div = document.createElement('div')
         div.id = String(data.id)
         div.className = className
-        div.append(this.getImg(data.img, 'blog__content__item__image'))
+        div.append(this.getImg(data.moks.img, 'blog__content__item__image'))
         div.append(this.getSubHeader(data.title, 'sub-header blog__content__item__header'))
-        div.append(this.getText(data.date, 'blog__content__item__date'))
+        div.append(this.getText(data.moks.date, 'blog__content__item__date'))
         div.append(this.getText(data.rating, 'blog__content__item__rating'))
-        div.append(this.getText(data.text, 'blog__content__item__text'))
+        div.append(this.getText(data.moks.text, 'blog__content__item__text'))
         div.append(this.getText(data.topics, 'blog__content__item__topics'))
         div.append(this.getBtn('read more', 'btn btn-style blog__content__item__button'))
     }
