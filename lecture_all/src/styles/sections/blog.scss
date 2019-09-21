@@ -1,0 +1,84 @@
+.blog {
+    padding: 10px;
+    .blog__header {
+        margin-top: 70px;
+        margin-bottom: 55px;
+    }
+    .content {
+        width: 100%;
+    }
+    .blog__content {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin-bottom: 70px;
+        .blog__content__item {
+            max-width: 205px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #fff;
+            margin-bottom: 20px;
+            transition: all ease 1s;
+            &:nth-child(1):focus { transform: scale(1.2, 1.2) translateX(80%); }
+            &:nth-child(2):focus { transform: scale(1.2, 1.2); }
+            &:nth-child(3):focus { transform: scale(1.2, 1.2) translateX(-80%); }
+            .blog__content__item__image {
+                width: 205px;
+                height: 110px;
+                margin-bottom: 35px;
+            }
+            .blog__content__item__header {
+                text-transform: uppercase;
+                margin-bottom: 25px;
+                text-align: center;
+            }
+            .blog__content__item__date {
+                font-size: 14px;
+                font-family: Helvetica;
+                color: $secondary-color;
+                margin-bottom: 25px;
+            }
+            .blog__content__item__rating {
+                text-transform: uppercase;
+                font-family: $primary-font;
+                font-size: 12px;
+                margin-top: 10px;
+            }
+            .blog__content__item__text {
+                flex-grow: 1;
+                font-family: Helvetica;
+                font-size: 14px;
+                line-height: 1.74;
+                text-align: center;
+            }
+            .blog__content__item__topics {
+                flex-grow: 1;
+                font-size: 12px;
+            }
+            .blog__content__item__button {
+                width: 125px;
+                height: 45px;
+                background-color: #ececec;
+                &:hover {
+                    color: #000;
+                    background-color: $primary-color;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 660px) {
+    .blog__pos__adap {
+        justify-content: space-around !important;
+    }
+}
+@media screen and (max-width: 505px) {
+    .blog__pos__adap {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}

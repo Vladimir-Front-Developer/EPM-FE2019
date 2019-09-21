@@ -1,0 +1,27 @@
+.slider {
+    padding: 10px;
+    background-image: url(./assets/images/1x/image.png);
+    object-fit: contain;
+    height: 690px;
+    .slider__item {
+        width: 100%;
+        .slider__item__header {
+            animation: increaseRightAlignment 1s ease-out forwards reverse;
+            color: $basic-color;
+            font-size: 40px;
+            font-weight: bold;
+            font-family: $primary-font;
+            margin-bottom: 35px;
+        }
+        .slider__item__text {
+            animation: increaseLeftAlignment 1s ease-out forwards reverse;
+            color: #fff;
+            margin-bottom: 35px;
+        }
+        .slider__item__btn {
+            animation: increaseRightAlignment 1s ease-out forwards reverse;
+            width: 125px;
+            height: 45px;
+        }
+    }
+}
