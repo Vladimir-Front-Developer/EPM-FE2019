@@ -106,7 +106,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _sty
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _services_Api__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../services/Api */ \"./src/scripts/services/Api.js\");\n/* harmony import */ var _services_PostsService__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./services/PostsService */ \"./src/scripts/blog/services/PostsService.js\");\n\r\n\r\n\r\nconst api = new _services_Api__WEBPACK_IMPORTED_MODULE_0__[\"default\"]()\r\napi.getPosts()\r\n.then(dataPosts => new _services_PostsService__WEBPACK_IMPORTED_MODULE_1__[\"default\"]('blogContent', 3, dataPosts))\r\n\n\n//# sourceURL=webpack:///./src/scripts/blog/blog.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _services_RequestApi__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../services/RequestApi */ \"./src/scripts/services/RequestApi.js\");\n/* harmony import */ var _services_PostsService__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./services/PostsService */ \"./src/scripts/blog/services/PostsService.js\");\n\r\n\r\n\r\nconst reqApi = new _services_RequestApi__WEBPACK_IMPORTED_MODULE_0__[\"default\"]()\r\nreqApi.getAll('posts')\r\n.then(dataPosts => new _services_PostsService__WEBPACK_IMPORTED_MODULE_1__[\"default\"]('blogContent', 3, dataPosts))\n\n//# sourceURL=webpack:///./src/scripts/blog/blog.js?");
 
 /***/ }),
 
@@ -122,18 +122,6 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _ser
 
 /***/ }),
 
-/***/ "./src/scripts/services/Api.js":
-/*!*************************************!*\
-  !*** ./src/scripts/services/Api.js ***!
-  \*************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./config */ \"./src/scripts/services/config.js\");\n\r\nclass Api{\r\n    async getPosts(){\r\n        try {\r\n            let res = await fetch(_config__WEBPACK_IMPORTED_MODULE_0__[\"default\"].url.posts)\r\n            return await res.json()\r\n        } catch(err) {\r\n            console.log(`ERROR getPosts: ${err}`)\r\n            return []\r\n        }\r\n    }\r\n}\r\n/* harmony default export */ __webpack_exports__[\"default\"] = (Api);\n\n//# sourceURL=webpack:///./src/scripts/services/Api.js?");
-
-/***/ }),
-
 /***/ "./src/scripts/services/Render.js":
 /*!****************************************!*\
   !*** ./src/scripts/services/Render.js ***!
@@ -143,6 +131,18 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _con
 
 "use strict";
 eval("__webpack_require__.r(__webpack_exports__);\nclass Render {\r\n    render(name, items){\r\n        let comp = document.getElementById(name)\r\n        for(let item of items){\r\n            comp.append(this.getItem(item))\r\n        }\r\n    }\r\n\r\n    getItem(item){\r\n        let div = document.createElement('div')\r\n        div.id = String(item.id)\r\n        div.className = item.style\r\n        item.elements.forEach(el => {\r\n            let type = el.type\r\n            switch (type) {\r\n                case 'img':\r\n                    div.append(this.getImg(el.value, el.style))\r\n                    break\r\n                case 'subHdr':\r\n                    div.append(this.getSubHeader(el.value, el.style))\r\n                    break\r\n                case 'txt':\r\n                    div.append(this.getText(el.value, el.style))\r\n                    break\r\n                case 'btn':\r\n                    div.append(this.getBtn(el.value, el.style))\r\n                    break\r\n                default:\r\n                    throw new Error('unknown type!')\r\n            }\r\n        })\r\n        return div\r\n    }\r\n\r\n    getImg(src, cls){\r\n        let img = document.createElement('img')\r\n        img.className = cls\r\n        img.src = src\r\n        img.alt = 'image'\r\n        return img\r\n    }\r\n    \r\n    getSubHeader(txt, cls){\r\n        let h4 = document.createElement('h4')\r\n        h4.className = `sub-header ${cls}`\r\n        h4.innerHTML = txt\r\n        return h4\r\n    }\r\n\r\n    getText(txt, cls){\r\n        let p = document.createElement('p')\r\n        p.className = cls\r\n        p.innerHTML = txt\r\n        return p\r\n    }\r\n\r\n    getBtn(txt, cls){\r\n        let btn = document.createElement('button')\r\n        btn.className = `btn btn-style ${cls}`\r\n        btn.innerHTML = txt\r\n        return btn\r\n    }\r\n}\r\n\r\n/* harmony default export */ __webpack_exports__[\"default\"] = (Render);\n\n//# sourceURL=webpack:///./src/scripts/services/Render.js?");
+
+/***/ }),
+
+/***/ "./src/scripts/services/RequestApi.js":
+/*!********************************************!*\
+  !*** ./src/scripts/services/RequestApi.js ***!
+  \********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./config */ \"./src/scripts/services/config.js\");\n\r\nclass RequestApi{\r\n    getAll(path){\r\n        return fetch(_config__WEBPACK_IMPORTED_MODULE_0__[\"default\"].url[path])\r\n        .then(res => res.json())\r\n        .catch(err => { throw new Error(`ERROR getAll: ${ err }`) })\r\n    }\r\n}\r\n/* harmony default export */ __webpack_exports__[\"default\"] = (RequestApi);\n\n//# sourceURL=webpack:///./src/scripts/services/RequestApi.js?");
 
 /***/ }),
 
