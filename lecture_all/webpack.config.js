@@ -1,11 +1,12 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const TerserJSPlugin = require('terser-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-// const FontelloPlugin = require("fontello-webpack-plugin")
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 
 module.exports = {
-    mode: 'development',
+    mode: 'production',
     entry: './src/app.js',
     output: {
         filename: 'bundle.js',
@@ -57,13 +58,16 @@ module.exports = {
             },
         ]
     },
+    optimization: {
+        minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})],
+    },
     plugins: [
         new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
             template: './src/index.html',
             meta: { 'viewport': 'width=device-width, initial-scale=1, shrink-to-fit=no' },
+            title: 'Zippy',
         }),
-        new MiniCssExtractPlugin({ filename: 'style.css' }),
-        // new FontelloPlugin({ config: require("./src/assets/fonts/fontello-019ff89e/config.json") })
+        new MiniCssExtractPlugin({ filename: 'style.css' })
     ],
 }
