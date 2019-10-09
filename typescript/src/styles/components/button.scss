@@ -1,0 +1,11 @@
+.btn-style {
+    font-size: 11px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: $primary-font;
+    background-color: $primary-color;
+    &:hover {
+        color: $basic-color;
+        background-color: $accent-color;
+    }
+}

@@ -19,6 +19,11 @@ module.exports = {
     module: {
         rules: [
             {
+                test: /\.tsx?$/,
+                use: 'ts-loader',
+                exclude: /node_modules/,
+            },
+            {
                 test: /\.(scss)$/,
                 use: [
                     MiniCssExtractPlugin.loader,
@@ -57,6 +62,9 @@ module.exports = {
                use: ['html-loader']
             },
         ]
+    },
+    resolve: {
+        extensions: [ '.tsx', '.ts', '.js' ],
     },
     optimization: {
         minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})],

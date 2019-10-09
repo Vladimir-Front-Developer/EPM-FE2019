@@ -1,0 +1,29 @@
+.fallow {
+    .fallow__header {
+        font-size: 11px;
+        font-weight: bold;
+        font-family: $primary-font;
+        text-transform: uppercase;
+        margin-bottom: 25px;
+    }
+    .fallow__list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        list-style-type: none;
+        max-width: 150px;
+        padding: 0px;
+        .fallow__list__item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            &:hover { 
+                transition: 0.5s;
+                transform: rotateX(360deg);
+                .icon { color: $accent-color; }
+            }
+        }
+    }
+}
