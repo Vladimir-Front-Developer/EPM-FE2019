@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-cruiser',
@@ -6,10 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cruiser.component.scss']
 })
 export class CruiserComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
+  @Output() onSelectCruiser: EventEmitter<any> = new EventEmitter<any>()
+  cruiser: object = {
+    type: 'cruiser',
+    length: 3,
+    qt: 2
   }
-
+  constructor(){}
+  ngOnInit(){}
+  public selectShip(){
+    this.onSelectCruiser.emit(this.cruiser)
+  }
 }

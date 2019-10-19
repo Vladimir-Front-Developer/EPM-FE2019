@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-battleship',
@@ -6,14 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./battleship.component.scss']
 })
 export class BattleshipComponent implements OnInit {
-  battleship = {
+  @Output() onSelectBattleship: EventEmitter<any> = new EventEmitter<any>()
+  battleship: object = {
     type: 'battleship',
     length: 4,
+    qt: 1
   }
-
-  constructor() { }
-
-  ngOnInit() {
+  constructor(){}
+  ngOnInit(){}
+  public selectShip(){
+    this.onSelectBattleship.emit(this.battleship)
   }
-
 }
