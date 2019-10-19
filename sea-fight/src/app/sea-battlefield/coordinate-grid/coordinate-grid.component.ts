@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { CoordinateGridService } from "./coordinate-grid.service";
 
 @Component({
   selector: 'app-coordinate-grid',
@@ -8,21 +9,14 @@ import { Component, Input, OnInit } from '@angular/core';
 export class CoordinateGridComponent implements OnInit {
   @Input() user: string
   markupX: string = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-  markupYlength: string = ' 0123456789'
-  markupY: Array<string> = this.markupYlength.split('')
+  markupY: Array<string> = ' 0123456789'.split('')
   lengthGrid: number = 10
-  coordinates: null | object [][] // object нужно заменить на interface
+  coordinates: object [][]
 
-  constructor(){}
+  constructor(private coordinateGridService: CoordinateGridService){
+    this.coordinates = coordinateGridService.generateCoordinates(this.lengthGrid)
+  }
 
   ngOnInit(){
-    this.coordinates = this.generateEmptyCoordinates(this.lengthGrid)
   }
-
-  generateEmptyCoordinates(num: number){
-    return new Array(num)
-      .fill(null, 0, num)
-      .map((el, idx) => new Array(num).fill(idx, 0, num))
-  }
-
 }

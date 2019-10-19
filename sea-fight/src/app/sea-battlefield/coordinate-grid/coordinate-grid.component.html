@@ -1,17 +1,16 @@
 <p class="user-name">{{user}}</p>
 <div class="coordinate-grid">
-  <div class="markupY">
-    <div class="markupItemY"
-       *ngFor="let num of markupY; let i = index">
-      <span>{{num}}</span>
+  <div>
+    <div class="markupY"
+       *ngFor="let mY of markupY">
+      <span>{{mY}}</span>
     </div>
   </div>
-  <div *ngFor="let coordinateY of coordinates; let ix = index">
-    <span>{{markupX[ix]}}</span>
+  <div *ngFor="let coordinate of coordinates; let mX = index">
+    <span>{{markupX[mX]}}</span>
     <app-grid-square
-      *ngFor="let coordinateX of coordinateY; let iy = index"
-      [coordinateX]="ix"
-      [coordinateY]="iy">
+      *ngFor="let square of coordinate"
+      [squareData]="square">
     </app-grid-square>
   </div>
 </div>

@@ -1,4 +1,5 @@
-import {Component, Input, OnInit} from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { GridSquareInterface } from "./grid-square.interface";
 
 @Component({
   selector: 'app-grid-square',
@@ -6,12 +7,14 @@ import {Component, Input, OnInit} from '@angular/core';
   styleUrls: ['./grid-square.component.scss']
 })
 export class GridSquareComponent implements OnInit {
-  @Input() coordinateX: number
-  @Input() coordinateY: number
+  @Input() squareData: GridSquareInterface
 
-  ngOnInit() {
-    console.log(this.coordinateX)
-    console.log(this.coordinateY)
+  constructor(){}
+
+  ngOnInit(){
+    // console.log(this.squareData)
   }
-
+  clickSquare(){
+    console.log(this.squareData)
+  }
 }

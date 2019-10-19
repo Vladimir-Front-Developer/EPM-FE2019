@@ -6,6 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./battleship.component.scss']
 })
 export class BattleshipComponent implements OnInit {
+  battleship = {
+    type: 'battleship',
+    length: 4,
+  }
 
   constructor() { }
 
