@@ -1,15 +1,19 @@
 <div class="ships">
   <app-caircraft-carrier *ngIf="false"></app-caircraft-carrier>
   <app-battleship
+    class="ship"
     [ngClass]="{ selectedShip: selectedShip === 'battleship'}"
     (onSelectBattleship)="selectShip($event)"></app-battleship>
   <app-cruiser
+    class="ship"
     [ngClass]="{ selectedShip: selectedShip === 'cruiser'}"
     (onSelectCruiser)="selectShip($event)"></app-cruiser>
   <app-destroyer
+    class="ship"
     [ngClass]="{ selectedShip: selectedShip === 'destroyer'}"
     (onSelectDestroyer)="selectShip($event)"></app-destroyer>
   <app-torpedo-boat
+    class="ship"
     [ngClass]="{ selectedShip: selectedShip === 'torpedoBoat'}"
     (onSelectTorpedoBoat)="selectShip($event)"></app-torpedo-boat>
 </div>
