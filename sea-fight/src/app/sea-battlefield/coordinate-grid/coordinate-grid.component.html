@@ -9,8 +9,14 @@
   <div *ngFor="let coordinate of coordinates; let mX = index">
     <span>{{markupX[mX]}}</span>
     <app-grid-square
+      (onMouseenterSquare)="hoverSquare($event)"
       *ngFor="let square of coordinate"
       [squareData]="square">
     </app-grid-square>
   </div>
 </div>
+<!--onClickSquare-->
+<!--onMouseenterSquare-->
+<!--class="ship"-->
+<!--[ngClass]="{ selectedShip: selectedShip === 'destroyer'}"-->
+<!--(onSelectDestroyer)="selectShip($event)"></app-destroyer>-->

@@ -1,5 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import { GridSquareInterface } from "./grid-square.interface";
+import {forEachComment} from "tslint";
 
 @Component({
   selector: 'app-grid-square',
@@ -8,13 +9,19 @@ import { GridSquareInterface } from "./grid-square.interface";
 })
 export class GridSquareComponent implements OnInit {
   @Input() squareData: GridSquareInterface
+  @Output() onClickSquare: EventEmitter<any> = new EventEmitter<any>()
+  @Output() onMouseenterSquare: EventEmitter<any> = new EventEmitter<any>()
 
   constructor(){}
 
-  ngOnInit(){
-    // console.log(this.squareData)
-  }
+  ngOnInit(){}
+
   clickSquare(){
-    console.log(this.squareData)
+    this.onClickSquare.emit(this.squareData)
+  }
+
+  hoverSquare(hover: boolean){
+    this.squareData.hover = hover
+    this.onMouseenterSquare.emit(this.squareData)
   }
 }

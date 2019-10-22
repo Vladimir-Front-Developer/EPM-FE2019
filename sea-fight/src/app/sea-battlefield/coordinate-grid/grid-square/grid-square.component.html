@@ -1,2 +1,7 @@
-<div class="square" (click)="clickSquare()">
+<div class="square"
+     (click)="clickSquare()"
+     (mouseover)="hoverSquare(true)"
+     (mouseout)="hoverSquare(false)"
+     [ngClass]="{ squareHover: this.squareData.hover }"
+      >
 </div>
