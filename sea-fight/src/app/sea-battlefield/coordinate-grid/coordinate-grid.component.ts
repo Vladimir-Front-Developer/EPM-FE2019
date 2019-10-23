@@ -1,6 +1,7 @@
-import { Component, HostListener, Input, OnInit } from '@angular/core';
+import { Component, HostListener, Input, OnChanges, OnInit } from '@angular/core';
 import { CoordinateGridService } from "./coordinate-grid.service";
 import { GridSquareInterface } from "./grid-square/grid-square.interface";
+import { ConfigService } from "../../services/config.service";
 
 @Component({
   selector: 'app-coordinate-grid',
@@ -9,17 +10,22 @@ import { GridSquareInterface } from "./grid-square/grid-square.interface";
 })
 export class CoordinateGridComponent implements OnInit {
   @Input() user: string
-  markupX: string = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-  markupY: Array<string> = ' 0123456789'.split('')
-  lengthGrid: number = 10
   coordinates: GridSquareInterface [][]
+  markupX: string
+  markupY: Array<string>
+  lengthGrid: number
   shipPosition: boolean = true
 
-  constructor(private coordinateGridService: CoordinateGridService){
-    this.coordinates = coordinateGridService.generateCoordinates(this.lengthGrid)
-  }
+  constructor(private coordinateGridService: CoordinateGridService, private cfgSvc: ConfigService){}
 
-  ngOnInit(){}
+  ngOnInit(){
+    this.cfgSvc.getGridSettings().subscribe(settings => {
+      this.markupX = settings.markup.x
+      this.markupY = settings.markup.y.split('')
+      this.lengthGrid = settings.length
+      this.coordinates = this.coordinateGridService.generateCoordinates(this.lengthGrid)
+    })
+  }
 
   @HostListener('window:keyup', ['$event'])
   onKeydown(event){

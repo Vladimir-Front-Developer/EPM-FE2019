@@ -5,7 +5,7 @@ import { GridSquareInterface } from "./grid-square/grid-square.interface";
   providedIn: 'root'
 })
 export class CoordinateGridService {
-  constructor(){}
+
   generateCoordinates(length: number): GridSquareInterface [][]{
     return new Array(length)
       .fill(null, 0, length)
@@ -21,4 +21,5 @@ export class CoordinateGridService {
         })
       )
   }
+
 }

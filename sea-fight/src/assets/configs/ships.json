@@ -1,0 +1,26 @@
+{
+  "battleship": {
+    "type": "battleship",
+    "imgUrl": "./assets/images/battleship.png",
+    "length": 4,
+    "qt": 1
+  },
+  "cruiser": {
+    "type": "cruiser",
+    "imgUrl":  "./assets/images/cruiser.png",
+    "length": 3,
+    "qt": 2
+  },
+  "destroyer": {
+    "type": "destroyer",
+    "imgUrl":  "./assets/images/destroyer.png",
+    "length": 2,
+    "qt": 3
+  },
+  "torpedoBoat": {
+    "type": "torpedoBoat",
+    "imgUrl":  "./assets/images/torpedo-boat.png",
+    "length": 1,
+    "qt": 4
+  }
+}

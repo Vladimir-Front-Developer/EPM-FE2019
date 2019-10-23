@@ -1,6 +1,5 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { GridSquareInterface } from "./grid-square.interface";
-import {forEachComment} from "tslint";
 
 @Component({
   selector: 'app-grid-square',
@@ -11,8 +10,6 @@ export class GridSquareComponent implements OnInit {
   @Input() squareData: GridSquareInterface
   @Output() onClickSquare: EventEmitter<any> = new EventEmitter<any>()
   @Output() onMouseenterSquare: EventEmitter<any> = new EventEmitter<any>()
-
-  constructor(){}
 
   ngOnInit(){}
 

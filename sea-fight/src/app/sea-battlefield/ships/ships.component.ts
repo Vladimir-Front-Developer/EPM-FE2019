@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ConfigService, shipsInterface } from "../../services/config.service";
 
 @Component({
   selector: 'app-ships',
@@ -7,8 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ShipsComponent implements OnInit {
   selectedShip: string
-  constructor(){}
-  ngOnInit(){}
+  shipsConfigs: shipsInterface
+
+  constructor(private cfgSvc: ConfigService){}
+
+  ngOnInit(){
+    this.cfgSvc.getShips().subscribe(ships => this.shipsConfigs = ships)
+  }
+
   selectShip(ship){
     this.selectedShip = ship.type
     console.log(this.selectedShip)
