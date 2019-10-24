@@ -6,13 +6,14 @@ import { GridSquareInterface } from "./grid-square/grid-square.interface";
 })
 export class CoordinateGridService {
 
-  generateCoordinates(length: number): GridSquareInterface [][]{
+  generateCoordinates(length: number, user: string): GridSquareInterface [][]{
     return new Array(length)
       .fill(null, 0, length)
       .map((el, idxX) => new Array(length)
         .fill(null, 0, length)
         .map((el, idxY) => {
           return {
+            user: user,
             status: 'sea',
             hover: false,
             x: idxX,

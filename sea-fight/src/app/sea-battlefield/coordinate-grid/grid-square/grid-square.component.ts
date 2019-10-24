@@ -18,6 +18,7 @@ export class GridSquareComponent implements OnInit {
   }
 
   hoverSquare(hover: boolean){
+    if(this.squareData.user === 'PC') return
     this.squareData.hover = hover
     this.onMouseenterSquare.emit(this.squareData)
   }

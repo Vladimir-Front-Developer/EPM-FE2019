@@ -15,6 +15,8 @@ export class CoordinateGridComponent implements OnInit {
   markupY: Array<string>
   lengthGrid: number
   shipPosition: boolean = true
+  lengthShip: number = 4
+  currentCoordinate: { x: number, y: number }
 
   constructor(private coordinateGridService: CoordinateGridService, private cfgSvc: ConfigService){}
 
@@ -23,20 +25,24 @@ export class CoordinateGridComponent implements OnInit {
       this.markupX = settings.markup.x
       this.markupY = settings.markup.y.split('')
       this.lengthGrid = settings.length
-      this.coordinates = this.coordinateGridService.generateCoordinates(this.lengthGrid)
+      this.coordinates = this.coordinateGridService.generateCoordinates(this.lengthGrid, this.user)
     })
   }
 
   @HostListener('window:keyup', ['$event'])
   onKeydown(event){
-    if(event.keyCode === 32) {
-      this.shipPosition = !this.shipPosition
+    if(event.keyCode === 32) this.shipPosition = !this.shipPosition
+    for(let i = 1; i < this.lengthShip; i++) {
+      try {
+        this.coordinates[this.currentCoordinate.x][this.currentCoordinate.y + i].hover = this.shipPosition
+        this.coordinates[this.currentCoordinate.x + i][this.currentCoordinate.y].hover = !this.shipPosition
+      } catch (e) {}
     }
   }
 
   hoverSquare(item){
-    const lengthShip = 4
-    for(let i = 0; i < lengthShip; i++) {
+    this.currentCoordinate = { x: item.x, y: item.y }
+    for(let i = 0; i < this.lengthShip; i++) {
       try {
         if(this.shipPosition) this.coordinates[item.x][item.y + i].hover = item.hover
         else this.coordinates[item.x + i][item.y].hover = item.hover
