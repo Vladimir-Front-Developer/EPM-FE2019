@@ -11,6 +11,12 @@ import { DragDropModule } from "@angular/cdk/drag-drop";
 import { BattleHistoryComponent } from './sea-battlefield/battle-history/battle-history.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ShipComponent } from './sea-battlefield/ships/ship/ship.component';
+import { AppRoutingModule } from './app-routing.module';
+import { LoginComponent } from './login/login.component';
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatInputModule} from "@angular/material/input";
+import {ReactiveFormsModule} from "@angular/forms";
+import {MatButtonModule} from "@angular/material/button";
 
 @NgModule({
   declarations: [
@@ -20,13 +26,19 @@ import { ShipComponent } from './sea-battlefield/ships/ship/ship.component';
     ShipsComponent,
     GridSquareComponent,
     BattleHistoryComponent,
-    ShipComponent
+    ShipComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     DragDropModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule,
+    MatFormFieldModule,
+    MatInputModule,
+    ReactiveFormsModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,13 @@
+<div class="container">
+  <form class="form" [formGroup]="authForm" (ngSubmit)="authenticate()">
+    <mat-form-field class="m-bottom">
+      <input matInput placeholder="enter your nickname" [formControl]="authForm.controls.nickname" required>
+      <mat-error *ngIf="authForm.invalid">{{getErrMsgNick()}}</mat-error>
+    </mat-form-field>
+    <mat-form-field class="m-bottom">
+      <input matInput placeholder="enter your email" [formControl]="authForm.controls.email" required>
+      <mat-error *ngIf="authForm.invalid">{{getErrMsgEmail()}}</mat-error>
+    </mat-form-field>
+    <button mat-raised-button [disabled]="!authForm.valid" color="primary" routerLink="/sea-battlefield" type="submit">Login</button>
+  </form>
+</div>
