@@ -1,0 +1,8 @@
+<div class="container">
+  <div class="list">
+    <div class="item"*ngFor="let item of (tips | async)">
+      <h4>{{item.header}}</h4>
+      <p>{{item.text}}</p>
+    </div>
+  </div>
+</div>

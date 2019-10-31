@@ -17,6 +17,7 @@ import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
 import {ReactiveFormsModule} from "@angular/forms";
 import {MatButtonModule} from "@angular/material/button";
+import { GameTipsComponent } from './sea-battlefield/game-tips/game-tips.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import {MatButtonModule} from "@angular/material/button";
     GridSquareComponent,
     BattleHistoryComponent,
     ShipComponent,
-    LoginComponent
+    LoginComponent,
+    GameTipsComponent
   ],
   imports: [
     BrowserModule,
